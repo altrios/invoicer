@@ -1,0 +1,231 @@
+@page {
+  margin: 0;
+}
+.body {
+  margin: 0;
+}
+.sheet {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+
+/** Paper sizes **/
+.A3 {
+  width: 297mm;
+  height: 419mm;
+}
+.A3_landscape {
+  width: 420mm;
+  height: 296mm;
+}
+.A4 {
+  width: 220mm;
+  height: 286mm;
+}
+.A4_landscape {
+  width: 297mm;
+  height: 209mm;
+}
+.A5 {
+  width: 148mm;
+  height: 209mm;
+}
+.A5_landscape {
+  width: 210mm;
+  height: 147mm;
+}
+
+.bodyA4 {
+  width: 230mm;
+  height: 306mm;
+  padding-top: 2mm;
+}
+.bodyA4_landscape {
+  width: 306;
+  height: 230mm;
+  padding-top: 2mm;
+}
+
+/** Padding area **/
+.padding10 {
+  padding: 10mm;
+}
+.sheet.padding-15mm {
+  padding: 15mm;
+}
+.sheet.padding-20mm {
+  padding: 20mm;
+}
+.sheet.padding-25mm {
+  padding: 25mm;
+}
+
+/** For screen preview **/
+@media screen {
+  .bodysheet {
+    background: #e0e0e0;
+  }
+  .sheet {
+    background: white;
+    box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
+    margin: 5mm;
+  }
+}
+
+/** Fix for Chrome issue #273306 **/
+@media print {
+  body.A3.landscape {
+    width: 420mm;
+  }
+  body.A3,
+  body.A4.landscape {
+    width: 297mm;
+  }
+  body.A4,
+  body.A5.landscape {
+    width: 210mm;
+  }
+  body.A5 {
+    width: 148mm;
+  }
+}
+.parrafo {
+  white-space: pre;
+}
+
+@keyframes expandCircle {
+  0% {
+    transform: scale(0.5);
+    color: #fff;
+  }
+  100% {
+    transform: scale(10.5);
+    color: #fff;
+  }
+}
+
+@keyframes contractCircle {
+  0% {
+    transform: scale(10.5);
+    color: #fff;
+  }
+  100% {
+    transform: scale(0.5);
+    color: #fff;
+  }
+}
+
+.body {
+  background-color: #eaf6f5;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circlescaleup {
+  animation: expandCircle 0.2s forwards;
+  animation-timing-function: cubic-bezier(0.79, -0.08, 0.37, 1.47);
+}
+
+.circlescaledown {
+  animation: contractCircle 0.2s forwards;
+  background-color: white;
+  animation-timing-function: cubic-bezier(0.79, -0.08, 0.37, 1.47);
+}
+
+.circlebutton {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  background: #fff;
+  color: #4c505b;
+  padding: 32px 16px;
+  text-align: left;
+  text-decoration: none !important;
+  font-size: 14px;
+  transition: background-color 100ms;
+  position: relative;
+  font-weight: 600;
+  border-radius: 40px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  display: -webkit-inline-box;
+  cursor: pointer;
+  transform: scale(1.5);
+  color: white;
+}
+.headeroptions {
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 6px;
+  text-align: left;
+  text-decoration: none !important;
+}
+
+@-webkit-keyframes SHOW-BOX {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-moz-keyframes SHOW-BOX {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-o-keyframes SHOW-BOX {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes SHOW-BOX {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.showHeaderbox {
+  -webkit-animation: SHOW-BOX 0.2s ease;
+  -moz-animation: SHOW-BOX 0.2s ease;
+  -o-animation: SHOW-BOX 0.2s ease;
+  animation: SHOW-BOX 0.2s ease;
+  transform-origin: top;
+}
+.showFooterbox {
+  -webkit-animation: SHOW-BOX 0.2s ease;
+  -moz-animation: SHOW-BOX 0.2s ease;
+  -o-animation: SHOW-BOX 0.2s ease;
+  animation: SHOW-BOX 0.2s ease;
+  transform-origin: top;
+}
+
+.footer {
+  position: absolute;
+  width: 110%;
+  bottom: 0;
+  padding-bottom: 10px;
+  margin-left: -40px;
+  padding-left: 40px;
+  margin-right: -40px;
+}
